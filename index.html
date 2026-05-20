@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yummy</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="https://routeegy.github.io/YummyExam/assets/images/logo.png" alt="Yummy Logo" onerror="this.style.display='none'" />
+      <span class="logo-emoji">😋</span>
+    </div>
+
+    <nav class="sidebar-nav" id="sidebarNav">
+      <ul>
+        <li style="--i:1"><a href="#" onclick="showSearch(); return false;"><i class="fas fa-search"></i> Search</a></li>
+        <li style="--i:2"><a href="#" onclick="showCategories(); return false;"><i class="fas fa-th-large"></i> Categories</a></li>
+        <li style="--i:3"><a href="#" onclick="showArea(); return false;"><i class="fas fa-globe"></i> Area</a></li>
+        <li style="--i:4"><a href="#" onclick="showIngredients(); return false;"><i class="fas fa-drumstick-bite"></i> Ingredients</a></li>
+        <li style="--i:5"><a href="#" onclick="showContact(); return false;"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fas fa-globe"></i></a>
+      <p>Copyright &copy; 2019 All Rights Reserved.</p>
+    </div>
+
+    <button class="close-btn" id="closeBtn" onclick="toggleSidebar()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <div class="main-content" id="mainContent">
+    <div class="hamburger" id="hamburger" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div id="appContent">
+      <div id="mealsGrid" class="meals-grid"></div>
+      <div id="mealDetail" class="meal-detail hidden"></div>
+      <div id="searchSection" class="search-section hidden">
+        <div class="search-inputs">
+          <input type="text" id="searchByName" placeholder="Search By Name" oninput="searchByName(this.value)" />
+          <input type="text" id="searchByLetter" placeholder="Search By First Letter" maxlength="1" oninput="searchByLetter(this.value)" />
+        </div>
+        <div id="searchResults" class="meals-grid"></div>
+      </div>
+      <div id="categoriesSection" class="categories-section hidden">
+        <div id="categoriesGrid" class="categories-grid"></div>
+      </div>
+      <div id="areaSection" class="area-section hidden">
+        <div id="areaGrid" class="area-grid"></div>
+      </div>
+      <div id="ingredientsSection" class="ingredients-section hidden">
+        <div id="ingredientsGrid" class="ingredients-grid"></div>
+      </div>
+      <div id="contactSection" class="contact-section hidden">
+        <div class="contact-form">
+          <div class="form-row">
+            <input type="text" id="nameInput" placeholder="Enter Your Name" oninput="validateForm()" />
+            <input type="email" id="emailInput" placeholder="Enter Your Email" oninput="validateForm()" />
+          </div>
+          <div class="form-row">
+            <input type="tel" id="phoneInput" placeholder="Enter Your Phone" oninput="validateForm()" />
+            <input type="number" id="ageInput" placeholder="Enter Your Age" oninput="validateForm()" />
+          </div>
+          <div class="form-row">
+            <input type="password" id="passwordInput" placeholder="Enter Your Password" oninput="validateForm()" />
+            <input type="password" id="repasswordInput" placeholder="Repassword" oninput="validateForm()" />
+          </div>
+          <div class="form-alerts hidden" id="formAlerts">
+            <span id="nameAlert"></span>
+            <span id="emailAlert"></span>
+            <span id="phoneAlert"></span>
+            <span id="ageAlert"></span>
+            <span id="passwordAlert"></span>
+            <span id="repassAlert"></span>
+          </div>
+          <button class="submit-btn" id="submitBtn" disabled>Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
