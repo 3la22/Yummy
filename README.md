@@ -2,7 +2,7 @@
 A responsive food recipe web app to browse, search, and explore thousands of meals from around the world. Filter by category, country, or ingredient and view full details including instructions and cooking videos.
 
 ## 🔗 Live Demo
-[https://3la22.github.io/YummyExam/](https://3la22.github.io/YummyExam/)
+https://3la22.github.io/Yummy/
 
 ## 📸 Screenshots
 ![Desktop](screenshot-laptop.png)
